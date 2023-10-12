@@ -1,0 +1,22 @@
+.btn {
+  padding: 0 20px;
+  font-size: 14px;
+}
+.btn--edit {
+  color: orange;
+}
+
+.btn--delete {
+  color: red;
+}
+
+.info {
+}
+
+.success-info {
+  border-bottom: 2px solid lightgreen;
+}
+
+.error-info {
+  border-bottom: 2px solid red;
+}
