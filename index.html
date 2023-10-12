@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Rehber</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./skeleton/normalize.css" />
+    <link rel="stylesheet" href="./skeleton/skeleton.css" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <body class="container">
+      <h1>Rehberim</h1>
+      <div class="info success-info">Başarılı</div>
+      <div class="info error-info">Hata oluştu</div>
+
+      <form id="guidebook-form">
+        <div>
+          <label for="name">Ad:</label>
+          <input type="text" id="name" class="u-full-width" />
+        </div>
+        <div>
+          <label for="surname">Soyad:</label>
+          <input type="text" id="surname" class="u-full-width" />
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" id="email" class="u-full-width" />
+        </div>
+        <div>
+          <button type="submit" class="button-primary">Kaydet</button>
+        </div>
+      </form>
+      <hr />
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Email</th>
+            <th>İşlem</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Burak</td>
+            <td>Özkan</td>
+            <td>burak@mail.com</td>
+            <td>
+              <button class="btn btn--edit">
+                <i class="far fa-trash-alt"></i>
+              </button>
+              <button class="btn btn--edit">
+                <i class="far fa-edit"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </body>
+
+    <script src="app.js" async defer></script>
+  </body>
+</html>
