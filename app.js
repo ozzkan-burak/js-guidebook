@@ -4,23 +4,6 @@ const personMail = document.querySelector("#email");
 
 const form = document.querySelector("#guidebook-from");
 
-document.addEventListener("submit", save);
-
-const checkData = (person) => {
-  for (const value in person) {
-    if (person[value]) {
-      console.log(person[value]);
-    } else {
-      console.log("boş değer var");
-      const result = {
-        status: false,
-        message: "Boi alan bırakmayınız",
-      };
-      return result;
-    }
-  }
-};
-
 const save = (e) => {
   e.preventDefault();
 
@@ -30,5 +13,27 @@ const save = (e) => {
     mail: personMail.value,
   };
 
-  checkData(personToAdd);
+  const checkDataResult = checkData(personToAdd);
+  if (checkDataResult.status) {
+    console.log("Başarılı");
+  } else {
+    console.log("Başarısız");
+  }
+};
+
+document.addEventListener("submit", save);
+
+const checkData = (person) => {
+  for (const value in person) {
+    const result = new Object();
+    if (person[value]) {
+      console.log("TEST");
+      result.status = true;
+      result.message = "";
+    } else {
+      result.status = false;
+      result.message = "Boş alan bırakmayınız";
+    }
+    return result;
+  }
 };
