@@ -28,13 +28,18 @@
 
     <body class="container">
       <h1>Rehberim</h1>
-      <div class="info success-info">Başarılı</div>
-      <div class="info error-info">!! Hata oluştu</div>
+      <!-- <div class="info success-info">Başarılı</div>
+      <div class="info error-info">!! Hata oluştu</div> -->
 
       <form id="guidebook-form">
         <div>
           <label for="name">Ad:</label>
-          <input type="text" id="name" class="u-full-width" />
+          <input
+            type="text"
+            id="name"
+            onfocus="focusElement()"
+            class="u-full-width"
+          />
         </div>
         <div>
           <label for="surname">Soyad:</label>
