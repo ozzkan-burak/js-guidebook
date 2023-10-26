@@ -17,10 +17,10 @@ const showMessage = (message = "", status) => {
     messageContainer.classList.add("error-info");
   }
 
-  if (status === null) {
-    const messageID = document.querySelector("#message-container");
-    document.querySelector(".container").removeChild(messageID);
-  }
+  // if (status === null) {
+  //   const messageID = document.querySelector("#message-container");
+  //   document.querySelector(".container").removeChild(messageID);
+  // }
 
   container.insertBefore(messageContainer, form);
 
@@ -42,17 +42,26 @@ const save = (e) => {
   };
 
   const checkDataResult = checkData(personToAdd);
-  if (checkDataResult.status) {
-    showMessage("Kayıt Başarılı", checkDataResult.status);
-  } else {
-    showMessage(
-      `!!Hata oluştu - ${checkDataResult.message}`,
-      checkDataResult.status
-    );
+  const messageContainerID = document.querySelector("#message-continer");
+  if (!messageContainerID) {
+    if (checkDataResult.status) {
+      showMessage("Kayıt Başarılı", checkDataResult.status);
+    } else {
+      showMessage(
+        `!!Hata oluştu - ${checkDataResult.message}`,
+        checkDataResult.status
+      );
+    }
   }
 };
 
 document.addEventListener("submit", save);
+
+const clearValues = () => {
+  personName.value = "";
+  personSurname.value = "";
+  personMail.value = "";
+};
 
 const checkData = (person) => {
   for (const value in person) {
@@ -64,6 +73,7 @@ const checkData = (person) => {
       result.status = false;
       result.message = "Boş alan bırakmayınız";
     }
+    clearValues();
     return result;
   }
 };
