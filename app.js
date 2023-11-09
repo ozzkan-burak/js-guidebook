@@ -2,6 +2,7 @@ const personName = document.querySelector("#name");
 const personSurname = document.querySelector("#surname");
 const personMail = document.querySelector("#email");
 const container = document.querySelector(".container");
+const personList = document.querySelector("#person-list");
 
 const form = document.querySelector("#guidebook-form");
 
@@ -32,6 +33,26 @@ const showMessage = (message = "", status) => {
   }
 };
 
+const handleAddToPersonlist = (personToAdd) => {
+  console.table(personToAdd);
+  const tableElement = document.createElement("tr");
+  tableElement.innerHTML = `
+    <td>${personToAdd.name}</td>
+    <td>${personToAdd.surname}</td>
+    <td>${personToAdd.mail}</td>
+    <td>
+      <button class="btn btn--edit">
+        <i class="far fa-edit"></i>
+      </button>
+      <button class="btn btn--delete">
+        <i class="far fa-trash-alt"></i>
+      </button>
+    </td>
+  `;
+
+  personList.appendChild(tableElement);
+};
+
 const save = (e) => {
   e.preventDefault();
 
@@ -45,6 +66,7 @@ const save = (e) => {
   const messageContainerID = document.querySelector("#message-continer");
   if (!messageContainerID) {
     if (checkDataResult.status) {
+      handleAddToPersonlist(personToAdd);
       showMessage("Kayıt Başarılı", checkDataResult.status);
     } else {
       showMessage(
